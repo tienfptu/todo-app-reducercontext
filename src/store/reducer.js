@@ -6,6 +6,12 @@ import {
 } from './constants';
 
 const initState = {
+    user: [
+        {
+            email: 'admin@gmail.com',
+            password: 'admin',
+        },
+    ],
     todos: [
         {
             id: '1',
@@ -25,6 +31,7 @@ function reducer(state, action) {
                 ...state,
                 todoInput: action.payload,
             };
+
         case ADD_TODO:
             return {
                 ...state,
@@ -37,19 +44,12 @@ function reducer(state, action) {
                     },
                 ],
             };
+
         case DELELTE_TODO:
             return {
                 ...state,
                 todos: [...state.todos.filter((todo) => todo.id !== action.id)],
             };
-        // case CHECK_TODO:
-        //     const newState = { ...state };
-        //     const index = newState.todos.findIndex(
-        //         (todo) => todo.id === action.id,
-        //     );
-        //     newState.todos[index].status = action.checked;
-
-        //     return newState;
 
         case CHECK_TODO:
             return {

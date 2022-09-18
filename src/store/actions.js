@@ -24,9 +24,3 @@ export const checkTodo = (id) => ({
     type: CHECK_TODO,
     id,
 });
-
-// export const checkTodo = (id, checked) => ({
-//     type: CHECK_TODO,
-//     id,
-//     checked,
-// });
